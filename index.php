@@ -1,71 +1,89 @@
-<?php
 
-include 'config.php';
+<?php 
 
-if(isset($_POST['submit'])){
-  // Chunk size for reading the file (1MB chunks)
-  $chunkSize = 1048576; // 1MB
+@include 'config.php';
 
-  // Get file info
-  $fileName = $_FILES['audioFile']['name'];
-  $fileTmpName = $_FILES['audioFile']['tmp_name'];
-
-$uploadDir = 'uploads/';
-  if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0755, true); // Create the directory if it doesn't exist
+$insert = false;
+if(isset($_POST['name'])){
+if(!$con){
+        die("connection to this database failed due to" . mysqli_connect_error());
     }
-$filePath = $uploadDir . $fileName;
+    $name = $_POST['name'];
+ $lastname = $_POST['lastname'];
+ $email = $_POST['email'];
+ $password = $_POST['password'];
 
-  // Additional information
-  $songName = $_POST['songName']; // Assuming you have a form field for song name
-  $artistName = $_POST['artistName']; // Assuming you have a form field for artist name
-  $audioType = pathinfo($fileName, PATHINFO_EXTENSION); // Get audio type from file extension
-
-  // Prepare SQL query
-  if (move_uploaded_file($_FILES['audioFile']['tmp_name'], $filePath)){
-  $sql = "INSERT INTO songs (song_name, artist_name, song_path, audio_type) VALUES (?, ?, ?, ?)";
-  }
-  // Prepare statement
-  $stmt = $conn->prepare($sql);
-
-  // Bind parameters
-  $null = NULL;
-$stmt->bind_param("ssss", $songName, $artistName, $filePath, $audioType);
-
-
-  // Open and read the file in chunks
-  if ($handle = fopen($fileTmpName, "rb")) {
-    while (!feof($handle)) {
-      // Read chunk
-      $chunk = fread($handle, $chunkSize);
-      // Bind the chunk to the parameter
-      $stmt->send_long_data(2, $chunk); // Parameter index 2 corresponds to song_path
+   $sql = "INSERT INTO  data(`name`, `lastname`, `email`, `password`, `dt`) VALUES ( '$name', '$lastname', '$email', '$password', current_timestamp())";
+    if($con->query($sql) == true){ 
+      
+        
+        $insert = true;
+        header('location:./login.php');
     }
-    fclose($handle);
-  }
+    else{
+        echo "ERROR: $sql <br> $con->error";
+    }
 
-  // Execute statement
-  if($stmt->execute()) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $stmt->error;
-  }
-} else {
-  echo "Please choose a file";
+    $con->close();
 }
 
-$conn->close();
 ?>
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="preloader.css">
+    <script>
+		setTimeout(function(){
+window.onload=function(){
+document.getElementById('loader').style.display="none";
+document.getElementById('content').style.display="block";
+}
+}, 50);
+		};
+		</script>
+		<style>
+		
+		</style>
+  </head>
+  <body>
+  
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <h4>It's free and only takes a minute</h4>
+      <form action="index.php" method="post">
+        <label>First Name</label>
+        <input type="text" name="name" id="name" placeholder="" />
+        <label>Last Name</label>
+        <input type="text" name="lastname"  id="lastname" placeholder="" />
+        <label>Email</label>
+        <input type="email" name="email"  id="email" placeholder="" />
+        <label>Password</label>
+        <input type="password" name="password"  id="password" placeholder="" />
+        <input type="submit" value="Submit" />
+      <closeform></closeform></form>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="login.php">Login here</a>
+    </p>
+    <?php
+        if($insert == true){
+        echo "<p class='submitMsg'>Thanks for Creating your account</p>";
+        }
+    ?>
 
-<form method="post" enctype="multipart/form-data">
-  <label for="songName">Song Name:</label>
-  <input type="text" name="songName" required><br>
+  </div>
+  
+  </body>
 
-  <label for="artistName">Artist Name:</label>
-  <input type="text" name="artistName" required><br>
 
-  <input type="file" name="audioFile" required><br>
-  <input type="submit" name="submit" value="Upload">
-</form>
 </html>

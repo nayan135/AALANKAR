@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+#loader {
+    position: absolute;
+    background: #000;
+    fill: #000;
+}
+
+.m {
+    background: #000;
+    fill: #000;
+    position: relative;
+    height: 700px;
+}
+
+.ed {
+    color: rgb(197, 43, 43);
+    font-size: large;
+    font-style: oblique;
+    font-weight: bolder;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    position: fixed;
+    font-family: 'Prosto One', cursive;
+    top: 43%;
+    left: 45%;
+    font-stretch: ultra-expanded;
+}
+
+
+/* span{
+    animation: animate 0.5s ease-in infinite;
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+
+/* }
+@keyframes animate{
+    
+        0% {
+          border: 2px solid rgba(150, 63, 63, 0.1);
+        }
+        50% {
+          border: 2px solid rgba(201, 11, 11, 0.5);
+        }
+        100% {
+          border: 2px solid rgba(25, 184, 33, 0.1);
+        }
+      } */
+
+.ed span {
+    animation: animate 3s 3s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        text-shadow: 0 0 10px rgba(70, 194, 85, 0.902), 0 0 20px rgba(196, 186, 186, 0.936), 0 0 30px rgb(208, 213, 176), 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        opacity: 0;
+        text-shadow: 0 0 5px rgba(71, 37, 37, 0.5), 0 0 10px rgb(91, 215, 108), 0 0 15px rgba(223, 164, 164, 0.3), 0 0 20px rgba(199, 158, 158, 0.2);
+    }
+}
+
+.ed2 {
+    color: rgb(197, 43, 43);
+    font-size: large;
+    font-style: oblique;
+    font-weight: bolder;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    position: fixed;
+    font-family: 'Prosto One', cursive;
+    top: 47%;
+    left: 43%;
+    font-stretch: ultra-expanded;
+}
+
+.ed2 span {
+    animation: animate2 5s 1s ease-in-out infinite;
+}
+
+@keyframes animate2 {
+    0% {
+        text-shadow: 0 0 10px rgba(70, 194, 85, 0.902), 0 0 20px rgba(196, 186, 186, 0.936), 0 0 30px rgb(208, 213, 176), 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        opacity: 0;
+        text-shadow: 0 0 5px rgba(71, 37, 37, 0.5), 0 0 10px rgb(91, 215, 108), 0 0 15px rgba(223, 164, 164, 0.3), 0 0 20px rgba(199, 158, 158, 0.2);
+    }
+}

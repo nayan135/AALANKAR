@@ -18,20 +18,19 @@ const cardImgElement = document.getElementById('cardImg');
 let isPlaying = false;
 
 function showCard(encodedSongPath, songName, artistName, imagePath) {
-    // Decode the path and set the audio source
+
     const decodedSongPath = decodeURIComponent(encodedSongPath);
     const source = document.createElement('source');
     source.src = decodedSongPath;
-    source.type = 'audio/mp3'; // Adjust based on your audio format
-    audioPlayer.innerHTML = ''; // Clear previous source elements
+    source.type = 'audio/mp3';
+    audioPlayer.innerHTML = '';
     audioPlayer.appendChild(source);
 
-    // Update card content
     songNameElement.textContent = songName;
     artistNameElement.textContent = artistName;
     cardImgElement.style.backgroundImage = `url(${imagePath})`;
 
-    // Load, play, and display the song
+
     audioPlayer.load();
     audioPlayer.play().catch(error => console.error('Play failed:', error));
     card.style.display = 'block';
@@ -47,16 +46,14 @@ function showCard(encodedSongPath, songName, artistName, imagePath) {
     });
 }
 
-// ... (other functions and event listeners remain the same)
 
-// Function to close the song card
+
 function closeCard() {
     card.style.display = 'none';
     audioPlayer.pause();
-    audioPlayer.currentTime = 0; // Reset playback
-} // Function to show a song card with details and cover image
+    audioPlayer.currentTime = 0;
 
-// Event listeners for audio player controls
+}
 playPauseButton.addEventListener('click', togglePlay);
 backwardButton.addEventListener('click', backward);
 forwardButton.addEventListener('click', forward);
@@ -64,14 +61,14 @@ audioPlayer.addEventListener('timeupdate', updateProgress);
 progressBar.addEventListener('input', seek);
 audioPlayer.addEventListener('play', () => {
     isPlaying = true;
-    playPauseButton.innerHTML = '<span class="material-symbols-outlined"> pause</span>'; // Play icon
+    playPauseButton.innerHTML = '<span class="material-symbols-outlined"> pause</span>';
 });
 audioPlayer.addEventListener('pause', () => {
     isPlaying = false;
     playPauseButton.innerHTML = '<svg fill="#fff" height="22" viewBox="0 0 18 22" width="18" xmlns="http://www.w3.org/2000/svg"><path d="m0 0v22l18-11z" fill="#000"></path></svg>'; // Pause icon
 });
 
-// Functions for playback control and progress
+
 function togglePlay() {
     if (isPlaying) {
         audioPlayer.pause();

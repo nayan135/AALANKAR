@@ -1,0 +1,49 @@
+@diameter: 4em;
+@radius: @diameter / 2;
+@border-color: #c2c7cc;
+@border-color-hover: #f26a3d;
+@colse-color: #8a9199;
+.close-btn {
+    position: absolute;
+    top: 50% - @diameter;
+    right: 50% - @radius;
+    box-sizing: border-box;
+    width: @diameter;
+    height: @diameter;
+    border-radius: @diameter;
+    border: 1px solid @border-color;
+    color: transparent;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    &:before,
+    &:after {
+        position: absolute;
+        width: @radius;
+        height: 1px;
+        left: 50%;
+        top: 50%;
+        margin-left: -@radius / 2;
+        content: '';
+        background: @colse-color;
+        transition: all ease 1s;
+    }
+    &:before {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    &:after {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    &:hover,
+    &:focus {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        border-color: @border-color-hover;
+        background: fade(@border-color-hover, 10%);
+        &:before,
+        &:after {
+            background: red;
+        }
+    }
+}
