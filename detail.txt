@@ -9,6 +9,8 @@ Vyainxa ki nai??
 
 hamro ta wednesday haina ra?
 hoo ho
+
+
 aaba tei home section milauna baki xa //yo taile mila hai  /@Sazal
 aani ta tei card halka js tesko bigera tyo bakixa @nayan135
  aani chai aauta team ko section garauna xa //yo @narayan
@@ -17,8 +19,3 @@ ya vaneko chai main file ma implement hanni ho seperate file ma haina hai
 yo chai voli sajha 9 baje tira 
 
 
-team ta garaxa naran le  
-tyo ni milauna parxa tesle banayera drive ma patha vaneko access nai dexaina 
-aru vann
-
-//aafno add hanao 
