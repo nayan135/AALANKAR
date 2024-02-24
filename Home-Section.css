@@ -3,17 +3,17 @@
     padding: 0;
 }
 
-body {
-    display: block;
-    background-image: url(SL.123119.26540.04.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.font {
+    left: 30px;
 }
 
-.home {
-    position: fixed;
-    margin-top: 100px;
+.home-section {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -46,7 +46,7 @@ h2 {
 }
 
 .music {
-    position: fixed;
+    position: absolute;
     width: 180px;
     height: 160px;
     border: 8px solid #bebebe;
@@ -54,7 +54,7 @@ h2 {
     border-top-left-radius: 110px;
     border-top-right-radius: 110px;
     left: 1050px;
-    top: 170px;
+    top: 28em;
 }
 
 .music:before,

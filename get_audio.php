@@ -16,40 +16,63 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Player</title>
+    <link rel="stylesheet" href="Home-Section.css">
     <link rel="stylesheet" href="newww.css"> 
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <!--  <lonk rel="stylesheet/less" type="text/css" href="new.less">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-</head>
+</head>  
+
 <body>
 
  <navbar>
         <header class="text-gray-600 body-font">
             <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center" bis_skin_checked="1">
-                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-                    <span class="ml-3 text-xl">Tailblocks</span>
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" onclick="reload()">
+                   
+                    <span class="ml-3 text-xl">AALANKAR</span>
                 </a>
-                <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                    <a class="mr-5 hover:text-gray-900" href="#home">HOME</a>
-                    <a class="mr-5 hover:text-gray-900" href="#team">TEAM</a>
-                    <a class="mr-5 hover:text-gray-900" href="#main">SONGS</a>
-                    <a class="mr-5 hover:text-gray-900" href="#contact">CONTACT</a>
+                <nav class="md:ml-auto md:mr-auto flex flex-wrap font-bold text-indigo-500 items-center justify-center">
+                    <a class="mr-5 hover:text-indigo-900" href="#home">HOME</a>
+                    <a class="mr-5 hover:text-indigo-900" href="#team">TEAM</a>
+                    <a class="mr-5 hover:text-indigo-900" href="#main">SONGS</a>
+                    <a class="mr-5 hover:text-indigo-900" href="#contact">CONTACT</a>
                 </nav>
-                <button class="inline-flex items-center bg-grey-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0">Button
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+                <button class="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 font-bold rounded text-indigo-900 mt-4 md:mt-0">LOGOUT
+                    </button>
             </div>
 
         </header>
 
     </navbar>
     <!---homeeeee-------->
+<section class="home-section">
+        <div class="home">
+            <div class="font">
+                <h1>AALANKAR</h1>
+
+                <h2>The Destination for <span class="autotype"></span></h2>
+            </div>
+            <div class="effect">
+                <div class="music">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                    <span class="line line4"></span>
+                    <span class="line line5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <div class="song-container">
     <?php
@@ -225,6 +248,16 @@ $result = $stmt->get_result();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIePtqQyNEuKSA5A+kYzT+hH0zKF4iKJqJ4R01M+nONPvqQx+JlY9w" crossorigin="anonymous"></script>
 <script src="testing.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+
+ <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var type = new Typed(".autotype", {
+            strings: ["Music Lover", "Lyricist", "Content Creator"],
+            typespeed: 100,
+            backspeed: 100,
+            loop: true
+        })
+    </script>
  <!--
 _________-implementing google maps api-_______
 

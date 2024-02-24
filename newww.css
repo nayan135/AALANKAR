@@ -89,14 +89,14 @@ html {
 #sdiv {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 12rem;
     right: 0;
     z-index: 7;
 }
 
 #sdiv {
     position: absolute;
-    top: 0;
+    top: 12rem;
     right: 0;
     overflow-y: auto;
 }
