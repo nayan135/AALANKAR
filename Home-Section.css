@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block;
+    background-image: url(SL.123119.26540.04.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home {
+    position: fixed;
+    margin-top: 100px;
+    display: flex;
+}
+
+h1 {
+    font-size: 70px;
+    font-family: "Prompt", sans-serif;
+    color: white;
+    font-weight: 120px;
+    padding-left: 200px;
+    margin-top: 100px;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: "Prompt", sans-serif;
+    color: white;
+    font-weight: 50px;
+    padding-left: 200px;
+    margin-top: 30px;
+}
+
+.hello {
+    color: red;
+    background: none;
+}
+
+.autotype {
+    color: red;
+    transition: 3s;
+}
+
+.music {
+    position: fixed;
+    width: 180px;
+    height: 160px;
+    border: 8px solid #bebebe;
+    border-bottom: 0px;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    left: 1050px;
+    top: 170px;
+}
+
+.music:before,
+.music:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    width: 40px;
+    height: 82px;
+    background-color: #bebebe;
+    border-radius: 15px;
+}
+
+.music:before {
+    right: -25px;
+}
+
+.music:after {
+    left: -25px;
+}
+
+.line {
+    position: absolute;
+    width: 6px;
+    min-height: 30px;
+    transition: 0.5s;
+    animation: equalize 4s 0s infinite;
+    animation-timing-function: linear;
+    vertical-align: middle;
+    bottom: 0 !important;
+    box-shadow: inset 0px 0px 16px -2px rgba(0, 0, 0, 0.15);
+}
+
+.line1 {
+    left: 30%;
+    bottom: 0px;
+    animation-delay: -1.9s;
+    background-color: #ff5e50;
+}
+
+.line2 {
+    left: 40%;
+    height: 60px;
+    bottom: -15px;
+    animation-delay: -2.9s;
+    background-color: #a64de6;
+}
+
+.line3 {
+    left: 50%;
+    height: 30px;
+    bottom: -1.5px;
+    animation-delay: -3.9s;
+    background-color: #5968dc;
+}
+
+.line4 {
+    left: 60%;
+    height: 65px;
+    bottom: -16px;
+    animation-delay: -4.9s;
+    background-color: #27c8f8;
+}
+
+.line5 {
+    left: 70%;
+    height: 60px;
+    bottom: -12px;
+    animation-delay: -5.9s;
+    background-color: #cc60b5;
+}
+
+@keyframes equalize {
+    0% {
+        height: 48px;
+    }
+    4% {
+        height: 42px;
+    }
+    8% {
+        height: 40px;
+    }
+    12% {
+        height: 30px;
+    }
+    16% {
+        height: 20px;
+    }
+    20% {
+        height: 30px;
+    }
+    24% {
+        height: 40px;
+    }
+    28% {
+        height: 10px;
+    }
+    32% {
+        height: 40px;
+    }
+    36% {
+        height: 48px;
+    }
+    40% {
+        height: 20px;
+    }
+    44% {
+        height: 40px;
+    }
+    48% {
+        height: 48px;
+    }
+    52% {
+        height: 30px;
+    }
+    56% {
+        height: 10px;
+    }
+    60% {
+        height: 30px;
+    }
+    64% {
+        height: 48px;
+    }
+    68% {
+        height: 30px;
+    }
+    72% {
+        height: 48px;
+    }
+    76% {
+        height: 20px;
+    }
+    80% {
+        height: 48px;
+    }
+    84% {
+        height: 38px;
+    }
+    88% {
+        height: 48px;
+    }
+    92% {
+        height: 20px;
+    }
+    96% {
+        height: 48px;
+    }
+    100% {
+        height: 48px;
+    }
+}
