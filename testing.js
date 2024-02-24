@@ -17,10 +17,6 @@ const cardImgElement = document.getElementById('cardImg');
 
 let isPlaying = false;
 
-function reload() {
-    window.location.href = window.location.href; // Add a hash to the URL
-    window.location.reload(true);
-}
 
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
