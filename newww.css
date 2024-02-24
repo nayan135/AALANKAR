@@ -1,11 +1,12 @@
 :root {
     --backg-color: #3adf7acd;
+    --mainbg: linear-gradient(to right bottom, #00ff68, #00e9c2, #00caff, #00a3ff, #2572ef);
 }
 
 body {
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to right bottom, #00ff68, #00e9c2, #00caff, #00a3ff, #2572ef);
+    background-image: var(--mainbg);
     margin: 0;
     padding: 0;
 }
