@@ -3,59 +3,69 @@
 include 'config.php';
 
 if(isset($_POST['submit'])){
-  // Chunk size for reading the file (1MB chunks)
-  $chunkSize = 1048576; // 1MB
+ 
+  $chunkSize = 1048576; 
 
-  // Get file info
-  $fileName = $_FILES['audioFile']['name'];
-  $fileTmpName = $_FILES['audioFile']['tmp_name'];
+  $audioFileName = $_FILES['audioFile']['name'];
+  $audioFileTmpName = $_FILES['audioFile']['tmp_name'];
 
-$uploadDir = 'uploads/';
-  if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0755, true); // Create the directory if it doesn't exist
-    }
-$filePath = $uploadDir . $fileName;
+  $imageFileName = $_FILES['imageFile']['name'];
+  $imageFileTmpName = $_FILES['imageFile']['tmp_name'];
 
-  // Additional information
-  $songName = $_POST['songName']; // Assuming you have a form field for song name
-  $artistName = $_POST['artistName']; // Assuming you have a form field for artist name
-  $audioType = pathinfo($fileName, PATHINFO_EXTENSION); // Get audio type from file extension
+  $audioUploadDir = 'uploads/';
+  $imageUploadDir = 'image_uploads/';
 
-  // Prepare SQL query
-  if (move_uploaded_file($_FILES['audioFile']['tmp_name'], $filePath)){
-  $sql = "INSERT INTO songs (song_name, artist_name, song_path, audio_type) VALUES (?, ?, ?, ?)";
+  if (!is_dir($audioUploadDir)) {
+    mkdir($audioUploadDir, 0755, true);
+
+  if (!is_dir($imageUploadDir)) {
+    mkdir($imageUploadDir, 0755, true); 
   }
-  // Prepare statement
-  $stmt = $conn->prepare($sql);
 
-  // Bind parameters
+  $audioFilePath = $audioUploadDir . $audioFileName;
+  $imageFilePath = $imageUploadDir . $imageFileName;
+
+  $songName = $_POST['songName'];
+  $artistName = $_POST['artistName'];
+  $audioType = pathinfo($audioFileName, PATHINFO_EXTENSION);
+
+  $imageType = pathinfo($imageFileName, PATHINFO_EXTENSION);
+
+  if (
+    move_uploaded_file($audioFileTmpName, $audioFilePath) &&
+    move_uploaded_file($imageFileTmpName, $imageFilePath)
+  ) {
+    $sql = "INSERT INTO songs (song_name, artist_name, song_path, audio_type, image_path, image_type) VALUES (?, ?, ?, ?, ?, ?)";
+  }
+
+  $stmt = $con->prepare($sql);
   $null = NULL;
-$stmt->bind_param("ssss", $songName, $artistName, $filePath, $audioType);
+  $stmt->bind_param("ssssss", $songName, $artistName, $audioFilePath, $audioType, $imageFilePath, $imageType);
 
-
-  // Open and read the file in chunks
-  if ($handle = fopen($fileTmpName, "rb")) {
-    while (!feof($handle)) {
-      // Read chunk
-      $chunk = fread($handle, $chunkSize);
-      // Bind the chunk to the parameter
-      $stmt->send_long_data(2, $chunk); // Parameter index 2 corresponds to song_path
+  if ($audioHandle = fopen($audioFileTmpName, "rb")) {
+    while (!feof($audioHandle)) {
+      $audioChunk = fread($audioHandle, $chunkSize);
+      $stmt->send_long_data(2, $audioChunk); 
     }
-    fclose($handle);
+    fclose($audioHandle);
   }
 
-  // Execute statement
   if($stmt->execute()) {
-    echo "New record created successfully";
+    echo "Record created successfully";
   } else {
     echo "Error: " . $stmt->error;
   }
+
+  $stmt->close();
+
 } else {
-  echo "Please choose a file";
+  echo "Please choose both audio and image files";
 }
 
-$conn->close();
+$con->close();
+
 ?>
+
 <!doctype html>
 
 <form method="post" enctype="multipart/form-data">
@@ -65,7 +75,12 @@ $conn->close();
   <label for="artistName">Artist Name:</label>
   <input type="text" name="artistName" required><br>
 
+  <label for="audioFile">Audio File:</label>
   <input type="file" name="audioFile" required><br>
+
+  <label for="imageFile">Image File:</label>
+  <input type="file" name="imageFile" required><br>
+
   <input type="submit" name="submit" value="Upload">
 </form>
 </html>
