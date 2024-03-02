@@ -101,3 +101,13 @@ function seek() {
     const currentTime = (progress * duration) / 100;
     audioPlayer.currentTime = currentTime;
 }
+
+window.addEventListener("scroll", function() {
+    var sdiv = document.getElementById("sdiv");
+
+    // Calculate the distance from the top of the page
+    var distanceFromTop = window.scrollY;
+
+    // Set the top position of the div
+    sdiv.style.top = distanceFromTop + "px";
+});
