@@ -81,3 +81,16 @@ p {
     font-weight: bold;
     text-align: center;
 }
+
+input[type="image/jpeg"] {
+    width: 279px;
+    height: 221px;
+}
+
+input [type="image/jpeg"] {
+    position: fixed;
+    width: 279px;
+    height: 221px;
+    top: 0;
+    left: 0;
+}
