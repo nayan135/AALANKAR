@@ -64,6 +64,9 @@ document.getElementById('content').style.display="block";
         <label>Email</label>
         <input type="email" name="email"  id="email" placeholder="" />
         <label>Password</label>
+
+        <input type="image/jpeg" name="image/jpeg"  id="image/jpeg" placeholder="" />
+        <label>Profile Picture</label>
         <input type="password" name="password"  id="password" placeholder="" />
         <input type="submit" value="Submit" />
       <closeform></closeform></form>
