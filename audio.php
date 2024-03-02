@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
   }
 
   $stmt->close();
-
+  }
 } else {
   echo "Please choose both audio and image files";
 }
