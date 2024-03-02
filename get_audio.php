@@ -1,8 +1,5 @@
 <?php
 include 'config.php';
-
-
-
 $sql = "SELECT id, song_name, artist_name, song_path, image_path FROM songs";
 $stmt = $con->prepare($sql);
 $stmt->execute();
@@ -16,48 +13,54 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Player</title>
-    <link rel="stylesheet" href="Home-Section.css">
     <link rel="stylesheet" href="newww.css"> 
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <!--  <link rel="stylesheet/less" type="text/css" href="new.less">-->
+    <link rel="stylesheet/less" type="text/css" href="Home-Section.css">
+    <script src="https://kit.fontawesome.com/2cefd37fbc.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
+ <link rel="stylesheet" href=""> 
 </head>  
-
 <body>
 
- <navbar>
-        <header class="text-gray-600 body-font">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center" bis_skin_checked="1">
-                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" onclick="reload()">
-                   
-                    <span class="ml-3 text-xl">AALANKAR</span>
-                </a>
-                <nav class="md:ml-auto md:mr-auto flex flex-wrap font-bold text-indigo-500 items-center justify-center">
-                    <a class="mr-5 hover:text-indigo-900" href="#home">HOME</a>
-                    <a class="mr-5 hover:text-indigo-900" href="#team">TEAM</a>
-                    <a class="mr-5 hover:text-indigo-900" href="#main">SONGS</a>
-                    <a class="mr-5 hover:text-indigo-900" href="#contact">CONTACT</a>
-                </nav>
-                <button class="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 font-bold rounded text-indigo-900 mt-4 md:mt-0">LOGOUT
-                    </button>
-            </div>
+ <!---navbarrrrrrrrrr---------------->
+ <div class="nav-links">
+        <h1>AALA<span color="lavender">NKAR</span></h1>
+        <div class="nav2">
+            <li><a href="#">Home</a></li>
+            <li class="center"><a href="#">Team</a></li>
+            <li class="upward"><a href="#">Songs</a></li>
+            <li class="forward"><a href="#">Contact</a></li>
+        </div>
 
-        </header>
+        <div class="social-buttons">
+            <a href="#" class="social-button social-button--facebook" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-button social-button--linkedin" aria-label="LinkedIn">
 
-    </navbar>
+
+                <i class="fa-brands fa-linkedin fa-lg"></i>
+            </a>
+            <a href="#" class="social-button social-button--github" aria-label="GitHub">
+                <i class="fa-brands fa-github fa-2xs" style="color: #63E6BE;"></i>
+            </a>
+        </div>
+
+    </div>
+
+ <!---navbarrrrrrrrrr---------------->
 
     <!---homeeeee-------->
 <section class="home-section">
         <div class="home">
             <div class="font">
-                <h1>AALANKAR</h1>
+                <h1 class="hii">AALANKAR</h1>
 
-                <h2>The Destination for <span class="autotype"></span></h2>
+                <h2 class="hie">The Destination for <span class="autotype"></span></h2>
             </div>
             <div class="effect">
                 <div class="music">
@@ -68,8 +71,11 @@ $result = $stmt->get_result();
                     <span class="line line5"></span>
                 </div>
             </div>
+            <button class="custom-btn btn-7"><span>LISTEN</span></button>
         </div>
     </section>
+
+
 
 
 
