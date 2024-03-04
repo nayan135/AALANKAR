@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.font {
+    left: 30px;
+}
+
+.home-section {
+    background-image: url(sad.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hii {
+    font-size: 90px;
+    font-family: "Prompt", sans-serif;
+    color: white;
+    position: absolute;
+    left: 1px;
+    margin-bottom: 240px;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.hie {
+    font-size: 32px;
+    font-family: "Prompt", sans-serif;
+    color: white;
+    font-weight: 50px;
+    position: absolute;
+    left: 160px;
+    top: 28rem;
+}
+
+.music {
+    width: 40px;
+    height: 30px;
+}
+
+.home-section {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hello {
+    color: rgb(255, 10, 10);
+    background: none;
+}
+
+.autotype {
+    color: red;
+    transition: 3s;
+}
+
+.music {
+    position: absolute;
+    left: 720px;
+    top: 22.2em;
+}
+
+.line {
+    position: absolute;
+    width: 5px;
+    min-height: 2.3px;
+    transition: 0.5s;
+    animation: equalize 4s 0s infinite;
+    animation-timing-function: linear;
+    vertical-align: middle;
+    bottom: 0 !important;
+    box-shadow: inset 0px 0px 8px -2px rgba(0, 0, 0, 0.15);
+}
+
+.line1 {
+    left: -25%;
+    bottom: 0px;
+    animation-delay: -1.9s;
+    background-color: #ff5e50;
+}
+
+.line2 {
+    left: 0%;
+    height: 60px;
+    bottom: -15px;
+    animation-delay: -2.9s;
+    background-color: #a64de6;
+}
+
+.line3 {
+    left: 25%;
+    height: 30px;
+    bottom: -1.5px;
+    animation-delay: -3.9s;
+    background-color: #5968dc;
+}
+
+.line4 {
+    left: 50%;
+    height: 65px;
+    bottom: -16px;
+    animation-delay: -4.9s;
+    background-color: #27c8f8;
+}
+
+.line5 {
+    left: 75%;
+    height: 60px;
+    bottom: -12px;
+    animation-delay: -5.9s;
+    background-color: #cc60b5;
+}
+
+@keyframes equalize {
+    0% {
+        height: 48px;
+    }
+    4% {
+        height: 42px;
+    }
+    8% {
+        height: 40px;
+    }
+    12% {
+        height: 30px;
+    }
+    16% {
+        height: 20px;
+    }
+    20% {
+        height: 30px;
+    }
+    24% {
+        height: 40px;
+    }
+    28% {
+        height: 10px;
+    }
+    32% {
+        height: 40px;
+    }
+    36% {
+        height: 48px;
+    }
+    40% {
+        height: 20px;
+    }
+    44% {
+        height: 40px;
+    }
+    48% {
+        height: 48px;
+    }
+    52% {
+        height: 30px;
+    }
+    56% {
+        height: 10px;
+    }
+    60% {
+        height: 30px;
+    }
+    64% {
+        height: 48px;
+    }
+    68% {
+        height: 30px;
+    }
+    72% {
+        height: 48px;
+    }
+    76% {
+        height: 20px;
+    }
+    80% {
+        height: 48px;
+    }
+    84% {
+        height: 38px;
+    }
+    88% {
+        height: 48px;
+    }
+    92% {
+        height: 20px;
+    }
+    96% {
+        height: 48px;
+    }
+    100% {
+        height: 48px;
+    }
+}
+
+.btn-7 {
+    background: red;
+    line-height: 42px;
+    width: 110px;
+    border: none;
+    position: absolute;
+    left: 350px;
+    top: 500px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.btn-7 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-7:hover {
+    background: transparent;
+    border: 1px solid red;
+    color: white;
+    transition: all 0.6s ease;
+}
