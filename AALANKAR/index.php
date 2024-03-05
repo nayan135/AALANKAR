@@ -35,12 +35,12 @@ $result = $stmt->get_result();
 
  <!---navbarrrrrrrrrr---------------->
  <div class="nav-links">
-        <h1>AALANKAR</h1>
+        <h1>"><span id="main">AALA<span id="logo">NKAR</span></span></h1>
         <div class="nav2">
-            <li><a href="#">Home</a></li>
-            <li class="center"><a href="#">Team</a></li>
-            <li class="upward"><a href="#">Songs</a></li>
-            <li class="forward"><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li class="center"><a href="team/index.html">Team</a></li>
+            <li class="upward"><a href="#songs">Songs</a></li>
+            <li class="forward"><a href="#contact">Contact</a></li>
             <li class=""><a href="../logingout.php">Logout</a></li>
 </div>
 
@@ -49,11 +49,11 @@ $result = $stmt->get_result();
  <!---navbarrrrrrrrrr---------------->
 
     <!---homeeeee-------->
-<section class="home-section">
+<section class="home-section" id="home">
         <div class="home">
             <div class="font">
-                <h1 class="hii">AALANKAR</h1>
-
+        
+            <span style="color: white; font-size: 30px;">Welcome, <?php echo $name; ?></span>
                 <h2 class="hie">The Destination for <span class="autotype"></span></h2>
             </div>
 
@@ -62,7 +62,7 @@ $result = $stmt->get_result();
         </div>
     </section>
 
-<main>
+<main id="songs">
     <div class="song-container">
     <?php
         while ($row = $result->fetch_assoc()) {
@@ -113,7 +113,7 @@ $result = $stmt->get_result();
 
 
 <!--footer------>
-<footer>
+<footer id="contact">
 <div class="bg-gray-100">
     <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         <div class="p-5">
